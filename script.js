@@ -24,7 +24,6 @@ function validateForm(data) {
   if (!data.nome.trim())                            return 'Nome do cliente é obrigatório.';
   if (!data.nota.trim())                            return 'Número da Nota Fiscal é obrigatório.';
   if (!data.unidade)                                return 'Selecione uma Unidade.';
-  if (!data.vendedor)                               return 'Selecione um Vendedor.';
   if (data.telefone.replace(/\D/g,'').length < 10)  return 'Telefone / WhatsApp inválido.';
   return null;
 }
@@ -92,7 +91,6 @@ document.getElementById('notaForm').addEventListener('submit', async function (e
     nome:      document.getElementById('nome').value.trim(),
     nota:      document.getElementById('nota').value.trim(),
     unidade:   document.getElementById('unidade').value,
-    vendedor:  document.getElementById('vendedor').value,
     telefone:  document.getElementById('telefone').value.trim(),
     timestamp: new Date().toLocaleString('pt-BR'),
   };
