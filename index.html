@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pneu Campeão Prodoeste</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="flag-badge">🇧🇷</div>
+      <h1 class="hero-title">PNEU CAMPEÃO<br>PRODOESTE</h1>
+      <p class="hero-sub">Aqui, quem compra pneu também entra em campo.</p>
+      <a href="#formulario" class="btn-primary">
+        <i class="fa-solid fa-futbol"></i> PARTICIPAR AGORA
+      </a>
+    </div>
+    <div class="logo-badge">
+      <span class="logo-text">Prodoeste</span>
+      <span class="logo-years"><strong>70</strong><br>ANOS</span>
+    </div>
+  </section>
+
+  <!-- ===== COMO FUNCIONA ===== -->
+  <section class="info-cards">
+    <div class="info-card">
+      <div class="info-icon green"><i class="fa-solid fa-receipt"></i></div>
+      <div class="info-body">
+        <h3>COMO FUNCIONA</h3>
+        <p>Cada nota fiscal cadastrada vale <strong>1 cupom</strong> para participar dos sorteios semanais da campanha.</p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon green"><i class="fa-solid fa-calendar-days"></i></div>
+      <div class="info-body">
+        <h3>PERÍODO</h3>
+        <p>Campanha válida de <strong>25/05 até 03/07.</strong></p>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-icon green"><i class="fa-solid fa-trophy"></i></div>
+      <div class="info-body">
+        <h3>SORTEIOS</h3>
+        <p>Sorteios realizados semanalmente conforme calendário da campanha.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRÊMIOS + FORMULÁRIO ===== -->
+  <section class="main-section">
+
+    <!-- Prêmios -->
+    <div class="prizes-panel">
+      <h2 class="section-title"><i class="fa-solid fa-trophy"></i> PRÊMIOS</h2>
+      <div class="prizes-grid">
+        <div class="prize-card">
+          <img src="imagens/camisa.jpeg" alt="Camiseta Copa 2026" />
+          <span>CAMISETA<br>COPA 2026</span>
+        </div>
+        <div class="prize-card">
+          <img src="imagens/copo.jpeg" alt="Copo Térmico Stanley" />
+          <span>COPO TÉRMICO<br>STANLEY</span>
+        </div>
+        <div class="prize-card">
+          <img src="imagens/kit.jpeg" alt="Kit Churrasco" />
+          <span>KIT<br>CHURRASCO</span>
+        </div>
+        <div class="prize-card">
+          <img src="imagens/caixa.jpeg" alt="Caixa Térmica" />
+          <span>CAIXA<br>TÉRMICA</span>
+        </div>
+        <div class="prize-card">
+          <img src="imagens/air.jpeg" alt="Air Fryer" />
+          <span>AIR<br>FRYER</span>
+        </div>
+        <div class="prize-card">
+          <img src="imagens/jbl.jpeg" alt="JBL Bluetooth" />
+          <span>JBL<br>BLUETOOTH</span>
+        </div>
+      </div>
+      <div class="super-prize">
+        <div class="super-prize-inner">
+          <div class="super-label">SUPER PRÊMIO</div>
+          <div class="super-name">SMART TV 42" 4K</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="form-panel" id="formulario">
+      <h2 class="section-title"><i class="fa-solid fa-file-lines"></i> CADASTRE SUA NOTA</h2>
+      <form id="notaForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome do Cliente</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required />
+          </div>
+          <div class="form-group">
+            <label for="nota">Número da Nota Fiscal</label>
+            <input type="text" id="nota" name="nota" placeholder="Digite o número da NF" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="unidade">Unidade</label>
+            <select id="unidade" name="unidade" required>
+              <option value="" disabled selected>Selecione a unidade</option>
+              <option value="Unidade 1">Unidade 1</option>
+              <option value="Unidade 2">Unidade 2</option>
+              <option value="Unidade 3">Unidade 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vendedor">Vendedor</label>
+            <select id="vendedor" name="vendedor" required>
+              <option value="" disabled selected>Selecione o vendedor</option>
+              <option value="Vendedor 1">Vendedor 1</option>
+              <option value="Vendedor 2">Vendedor 2</option>
+              <option value="Vendedor 3">Vendedor 3</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+        </div>
+
+        <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+          <i class="fa-solid fa-futbol"></i> PARTICIPAR
+        </button>
+        <p class="form-note"><i class="fa-solid fa-lock"></i> Seus dados estão protegidos. Usaremos apenas para esta campanha.</p>
+      </form>
+
+      <!-- Feedback -->
+      <div id="formFeedback" class="form-feedback hidden"></div>
+    </div>
+
+  </section>
+
+  <!-- ===== CALENDÁRIO DE SORTEIOS ===== -->
+  <section class="calendar-section">
+    <h2 class="calendar-title"><i class="fa-solid fa-calendar-check"></i> CALENDÁRIO DE SORTEIOS</h2>
+    <div class="calendar-grid">
+      <div class="cal-item">
+        <span class="cal-date">01/06</span>
+        <span class="cal-label">Sorteio Semanal</span>
+      </div>
+      <div class="cal-item">
+        <span class="cal-date">08/06</span>
+        <span class="cal-label">Sorteio Semanal</span>
+      </div>
+      <div class="cal-item highlight">
+        <span class="cal-date">15/06</span>
+        <span class="cal-label">SUPER PRÊMIO<br>SMART TV</span>
+      </div>
+      <div class="cal-item">
+        <span class="cal-date">22/06</span>
+        <span class="cal-label">Sorteio Semanal</span>
+      </div>
+      <div class="cal-item">
+        <span class="cal-date">29/06</span>
+        <span class="cal-label">Sorteio Semanal</span>
+      </div>
+    </div>
+
+    <div class="vamos-juntos">
+      <div class="ball-icon">⚽</div>
+      <div>
+        <p class="vj-title">VAMOS JUNTOS!</p>
+        <p class="vj-sub">PRODOESTE &amp; VOCÊ NO TOPO</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
