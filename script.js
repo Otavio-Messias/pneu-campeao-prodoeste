@@ -14,6 +14,11 @@ document.getElementById('telefone').addEventListener('input', function () {
   this.value = v;
 });
 
+// Permitir apenas números na Nota Fiscal
+document.getElementById('nota').addEventListener('input', function () {
+  this.value = this.value.replace(/\D/g, '');
+});
+
 function validateForm(data) {
   if (!data.nome.trim()) return 'Nome do cliente é obrigatório.';
   if (!data.nota.trim()) return 'Número da Nota Fiscal é obrigatório.';
