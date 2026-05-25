@@ -3,7 +3,7 @@
 //  Envio via JSONP (contorna CORS do Google Apps Script)
 // ============================================================
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxarz-J7CKJqAMWlfnT_d0kdeBuEVS1eCYNHnbhd1gT/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx36MsE4hzIKfa7KX3t8SDqoI0K1Jo85ewXCbfcq8rGOFudAGVpoKDsFcU1MFcXALrKnQ/exec';
 
 // Máscara de telefone
 document.getElementById('telefone').addEventListener('input', function () {
