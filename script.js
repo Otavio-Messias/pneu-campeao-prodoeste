@@ -19,6 +19,18 @@ document.getElementById('nota').addEventListener('input', function () {
   this.value = this.value.replace(/\D/g, '');
 });
 
+// Gerar opções de gols de 0 até 20
+['brasil', 'marrocos'].forEach(id => {
+  const select = document.getElementById(id);
+
+  for (let i = 0; i <= 20; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    select.appendChild(option);
+  }
+});
+
 function validateForm(data) {
   if (!data.nome.trim()) return 'Nome do cliente é obrigatório.';
   if (!data.nota.trim()) return 'Número da Nota Fiscal é obrigatório.';

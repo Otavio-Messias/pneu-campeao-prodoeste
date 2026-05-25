@@ -103,7 +103,7 @@
               type="text"
               id="nota"
               name="nota"
-              placeholder="Digite o número da NF"
+              placeholder="Apenas os 5 primeiros dígitos"
               inputmode="numeric"
               pattern="[0-9]*"
               required
@@ -130,14 +130,18 @@
 
     <div class="team">
       <img src="imagens/logobrasil.png" alt="Brasil">
-      <input type="number" id="brasil" name="brasil" min="0" required>
+      <select id="brasil" name="brasil" required>
+        <option value="">selecione</option>
+      </select>
     </div>
 
     <span class="vs">X</span>
 
     <div class="team">
       <img src="imagens/logomarrocos.png" alt="Adversário">
-      <input type="number" id="marrocos" name="marrocos" min="0" required>
+      <select id="marrocos" name="marrocos" required>
+        <option value="">selecione</option>
+      </select>
     </div>
 
   </div>
