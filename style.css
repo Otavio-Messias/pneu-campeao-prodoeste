@@ -434,3 +434,64 @@ select { cursor: pointer; }
   .hero-title { font-size: 2.5rem; }
   .main-section { padding: 0 12px; }
 }
+.score-box {
+  background: linear-gradient(135deg, #1a4a1a 0%, #2e7d32 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 18px;
+  color: #fff;
+  text-align: center;
+}
+
+.score-title {
+  display: block;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--yellow);
+  margin-bottom: 8px;
+}
+
+.score-sub {
+  font-size: .82rem;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
+
+.score-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.team img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.team input {
+  width: 70px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 10px;
+  border: none;
+  background: #fff;
+}
+
+.vs {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--yellow);
+}

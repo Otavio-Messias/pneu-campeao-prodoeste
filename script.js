@@ -3,12 +3,9 @@
 //  Envio via JSONP (contorna CORS do Google Apps Script)
 // ============================================================
 
-// ⚠️ SUBSTITUA pela URL do seu Web App (use /exec, não /dev)
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxarz-J7CKJqAMWlfnT_d0kdeBuEVS1eCYNHnbhd1gT/exec';
 
-// ============================================================
-//  Máscara de telefone  (00) 00000-0000
-// ============================================================
+// Máscara de telefone
 document.getElementById('telefone').addEventListener('input', function () {
   let v = this.value.replace(/\D/g, '').substring(0, 11);
   if (v.length >= 7)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
@@ -17,20 +14,17 @@ document.getElementById('telefone').addEventListener('input', function () {
   this.value = v;
 });
 
-// ============================================================
-//  Validação
-// ============================================================
 function validateForm(data) {
-  if (!data.nome.trim())                            return 'Nome do cliente é obrigatório.';
-  if (!data.nota.trim())                            return 'Número da Nota Fiscal é obrigatório.';
-  if (!data.unidade)                                return 'Selecione uma Unidade.';
-  if (data.telefone.replace(/\D/g,'').length < 10)  return 'Telefone / WhatsApp inválido.';
+  if (!data.nome.trim()) return 'Nome do cliente é obrigatório.';
+  if (!data.nota.trim()) return 'Número da Nota Fiscal é obrigatório.';
+  if (data.telefone.replace(/\D/g,'').length < 10) return 'Telefone / WhatsApp inválido.';
+
+  if (data.brasil === '') return 'Informe o palpite de gols do Brasil.';
+  if (data.marrocos === '') return 'Informe o palpite de gols do adversário.';
+
   return null;
 }
 
-// ============================================================
-//  Feedback visual
-// ============================================================
 function showFeedback(type, message) {
   const el = document.getElementById('formFeedback');
   el.className = `form-feedback ${type}`;
@@ -39,9 +33,6 @@ function showFeedback(type, message) {
   el.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// ============================================================
-//  Envio via JSONP
-// ============================================================
 function sendViaJsonp(data) {
   return new Promise((resolve, reject) => {
     const callbackName = 'gs_cb_' + Date.now();
@@ -79,24 +70,27 @@ function sendViaJsonp(data) {
   });
 }
 
-// ============================================================
-//  Submit principal
-// ============================================================
 document.getElementById('notaForm').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const submitBtn = document.getElementById('submitBtn');
 
   const data = {
-    nome:      document.getElementById('nome').value.trim(),
-    nota:      document.getElementById('nota').value.trim(),
-    unidade:   document.getElementById('unidade').value,
-    telefone:  document.getElementById('telefone').value.trim(),
+    nome: document.getElementById('nome').value.trim(),
+    nota: document.getElementById('nota').value.trim(),
+    telefone: document.getElementById('telefone').value.trim(),
+
+    brasil: document.getElementById('brasil').value.trim(),
+    marrocos: document.getElementById('marrocos').value.trim(),
+
     timestamp: new Date().toLocaleString('pt-BR'),
   };
 
   const error = validateForm(data);
-  if (error) { showFeedback('error', error); return; }
+  if (error) {
+    showFeedback('error', error);
+    return;
+  }
 
   submitBtn.classList.add('loading');
   submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
@@ -104,7 +98,7 @@ document.getElementById('notaForm').addEventListener('submit', async function (e
 
   try {
     await sendViaJsonp(data);
-    showFeedback('success', '✅ Cadastro realizado com sucesso! Boa sorte no sorteio!');
+    showFeedback('success', '✅ Cadastro realizado com sucesso! Boa sorte no sorteio e no palpite premiado!');
     this.reset();
   } catch (err) {
     console.error('Erro:', err);
@@ -115,9 +109,6 @@ document.getElementById('notaForm').addEventListener('submit', async function (e
   }
 });
 
-// ============================================================
-//  Scroll suave para o formulário
-// ============================================================
 document.querySelectorAll('a[href="#formulario"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
